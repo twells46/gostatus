@@ -234,7 +234,7 @@ func get_volume(stats *Stats) {
 func main() {
 	units := []string{"B/s", "KiB/s", "MiB/s", "GiB/s", "TiB/s"}
 	stats := Stats{wg: &sync.WaitGroup{}}
-	limiter := time.Tick(1500 * time.Millisecond)
+	limiter := time.Tick(2 * time.Second)
 
 	sigc := make(chan os.Signal, 1)
 	signal.Notify(sigc,
